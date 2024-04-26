@@ -271,23 +271,29 @@
             </div>
             <div class="row">
                 <div class="col-lg-12">
-                    <form id="contactForm" name="contactForm">
+                    <form action="mailto:techtrovelearning@gmail.com" method="post" enctype="text/plain" id="contactForm" name="contactForm">
                         <div class="row">
                             <div class="col-md-6">
-                                <div class="form-group mb-3"><input class="form-control" type="text" id="name" placeholder="Your Name *" required=""><small class="form-text text-danger flex-grow-1 lead"></small></div>
-                                <div class="form-group mb-3"><input class="form-control" type="email" id="email" placeholder="Your Email *" required=""><small class="form-text text-danger lead"></small></div>
-                                <div class="form-group mb-3"><input class="form-control" type="tel" placeholder="Your Phone *" required=""><small class="form-text text-danger lead"></small></div>
+                                <div class="form-group mb-3"><input class="form-control" type="text" name="Name:" value="" id="name" placeholder="Your Name *" required=""><small class="form-text text-danger flex-grow-1 lead"></small></div>
+                                <div class="form-group mb-3"><input class="form-control" type="email" name="Email:" value="" id="email" placeholder="Your Email *" required=""><small class="form-text text-danger lead"></small></div>
+                                <div class="form-group mb-3"><input class="form-control" type="tel" name="Contact No.:" value="" placeholder="Your Phone *" required=""><small class="form-text text-danger lead"></small></div>
                             </div>
+
                             <div class="col-md-6">
-                                <div class="form-group mb-3"><textarea class="form-control" id="message" placeholder="Your Message *" required=""></textarea><small class="form-text text-danger lead"></small></div>
+                                <div class="form-group mb-3">
+                                    <textarea name="Message: " class="form-control" id="message" placeholder="Your Message *" required="">
+                                </textarea>
+                                
+                                <small class="form-text text-danger lead"></small></div>
                             </div>
                             <div class="w-100"></div>
-
-
                             <div class="col-lg-12 text-center">
                                 <div id="success"></div>
-                                <a id="sendMessageButton" class="btn btn-primary btn-xl text-uppercase" role="button" href="mailto:techtrovelearning@gmail.com" >Send Message</a>
-                            </div>
+
+                                <input type="submit" name="" id="sendMessageButton" class="btn btn-primary btn-xl text-uppercase" role="button" >
+                           
+
+                                 </div>
                             
                         </div>
                     </form>
@@ -427,7 +433,7 @@
                         <div class="col-lg-8 mx-auto">
                             <div class="modal-body">
                                 <h2 class="text-uppercase">MECHANICAL AUTOCAD </h2><img class="img-fluid d-block mx-auto" src="assets/img/portfolio/CAD_mechanical_COURSE.gif">
-                                <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                                <p>Welcome to Techtrove Learning, where we delve into the fascinating world of machine learning. Our machine learning courses are crafted to equip you with the knowledge and skills needed to harness the power of data and algorithms. Whether you're a novice intrigued by the possibilities or an experienced practitioner seeking to deepen your understanding, our expert instructors will guide you through the fundamentals and beyond. From supervised and unsupervised learning to deep learning and neural networks, our curriculum covers a wide range of techniques and applications. Through hands-on projects and real-world case studies, you'll gain practical experience and insight into how machine learning is revolutionizing industries worldwide. Join us at Techtrove Learning and embark on a journey towards mastering the art of machine learning, because the future belongs to those who can harness the potential of AI and data science.</p>
                                 <ul class="list-unstyled">
                                     <li>Date: January 2024</li>
                                     <li>Category: Mechanical</li>
