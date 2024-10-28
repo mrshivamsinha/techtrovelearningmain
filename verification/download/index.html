@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificate Verification</title>
+    <style>
+        /* Reset margin and padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Background */
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #4e73df, #a4b3f4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+        }
+
+        /* Container */
+        .container {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        /* Heading */
+        h2 {
+            font-size: 1.8rem;
+            color: #4e73df;
+            margin-bottom: 1rem;
+        }
+
+        /* Input Field */
+        input[type="text"] {
+            width: 100%;
+            padding: 0.8rem;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+
+        /* Button */
+        button {
+            background-color: #4e73df;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s ease;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #375a9e;
+        }
+
+        /* Alert Message */
+        .alert {
+            margin-top: 1rem;
+            color: red;
+            font-size: 0.9rem;
+        }
+
+        /* Keyframes for fade-in animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Verify Your MOOC Certificate</h2>
+        <input type="text" id="certificateNumber" placeholder="Enter Certificate Number">
+        <button onclick="downloadCertificate()">Download Certificate</button>
+        <div class="alert" id="alertMessage"></div>
+    </div>
+
+    <script>
+        const certificateMap = {
+            "TTLCT2189": "18sRBKgf32vu2-sESoNAZLOxwhOBr-Qc6",
+            "TTLCT2190": "1UToltI24-wD-Bo6PXdjlIgUZrbpE6_Fg",
+            "TTLCT2191": "1Uta9mcaM3ft7VB23aFEocD0g-y2yHlFl",
+            "TTLCT2192": "1KIcS5NQKbIoSbBTtiHp02M2OER6cfiEe",
+            "TTLCT2193": "1COcs9C8pDMqjKPPJ0gRZZfQJvAgCEl2F",
+            "TTLCT2194": "13WPEN-YzmQJ99eMhmRQ3X9TeJKr0Eqdv",
+            "TTLCT2195": "1npA1ByjKz5z40R-MqI3zXUBKWO5lVM2Q",
+            "TTLCT2196": "1Pop7atdjz3xZYkrOoKaDSQtvzz_CbaC0",
+            "TTLCT2197": "1ePrJfRKgMH7CBUnMHEHCxfbVGoSFckn0",
+            "TTLCT2198": "1U4YfCxFGypGsqZdscHIehbi5kfaKWbtF",
+            "TTLCT2199": "1YghGXYK7z8sL1SdcBILqsoiVS_fh7JyI"
+        };
+
+        function downloadCertificate() {
+            const certNumber = document.getElementById("certificateNumber").value.trim();
+            const alertMessage = document.getElementById("alertMessage");
+            const fileId = certificateMap[certNumber];
+
+            if (fileId) {
+                const downloadLink = `https://drive.google.com/uc?export=download&id=${fileId}`;
+                window.location.href = downloadLink;
+                alertMessage.textContent = "";
+            } else {
+                alertMessage.textContent = "Certificate not found. Please check your certificate number.";
+            }
+        }
+    </script>
+</body>
+
+</html>
